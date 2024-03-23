@@ -71,4 +71,7 @@ dependencies {
 
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
+
+    implementation(libs.javax.inject)
+    implementation(libs.opencsv)
 }
