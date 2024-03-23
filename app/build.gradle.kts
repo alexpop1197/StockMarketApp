@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp") version "1.9.22-1.0.17"
+
 }
 
 android {
@@ -82,5 +84,17 @@ dependencies {
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+    // Compose Nav Destinations
+    implementation("io.github.raamcosta.compose-destinations:core:1.1.2-beta")
+    ksp("io.github.raamcosta.compose-destinations:ksp:1.1.2-beta")
+    //Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:2.40.5")
+    kapt("com.google.dagger:hilt-android-compiler:2.40.5")
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    implementation("com.google.accompanist:accompanist-swiperefresh:0.24.2-alpha")
 }
 

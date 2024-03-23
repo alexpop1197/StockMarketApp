@@ -20,7 +20,9 @@ class CompanyListingsViewModel @Inject constructor(
 ): ViewModel(){
     var state by mutableStateOf(CompanyListingsState())
 
+    /* job used to delay queries between user typing */
     private var searchJob: Job? = null
+
     fun onEvent(event: CompanyListingsEvent){
         when(event){
             is CompanyListingsEvent.OnSearchQueryChange -> {
