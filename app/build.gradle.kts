@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -47,7 +49,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
+
+
 
 dependencies {
 
@@ -74,4 +79,8 @@ dependencies {
 
     implementation(libs.javax.inject)
     implementation(libs.opencsv)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 }
+
